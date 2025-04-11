@@ -1,5 +1,6 @@
 package me.zeld.emperia.api;
 
+import jakarta.servlet.http.HttpServletRequest;
 import me.zeld.emperia.reign.network.Client;
 import me.zeld.emperia.reign.service.*;
 import org.springframework.web.bind.annotation.*;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 public class ReignController {
     Reign reign;
 
-    @GetMapping(value = "{name}/full", produces = "application/json")
-    public Reign getFullReign(@PathVariable String name) {
+    @GetMapping(value = "/{name}", produces = "application/json")
+    public Reign getReign(@PathVariable String name) {
         if (reign != null) {
             System.out.println("Reign found");
             if (reign.getName().equals(name)) {
@@ -24,5 +25,11 @@ public class ReignController {
         System.out.println("Reign created");
 
         return reign;
+    }
+
+
+    @GetMapping(value = "/{name}/warehouse")
+    public Warehouse getWarehouse(@PathVariable String name) {
+        return reign.getWarehouse();
     }
 }

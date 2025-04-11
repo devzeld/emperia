@@ -1,8 +1,9 @@
 package me.zeld.emperia.reign.network;
 
+import me.zeld.emperia.reign.service.Warehouse;
+
 import java.io.*;
 import java.net.*;
-import java.util.*;
 
 public class CommandManager implements Runnable{
     private Socket client;
@@ -24,11 +25,6 @@ public class CommandManager implements Runnable{
             throw new RuntimeException(e);
         }
     }
-
-    public Vector<String> getWarehouse() {
-        return null;
-    }
-
 
     public Socket getClient() {
         return client;
