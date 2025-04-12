@@ -1,9 +1,8 @@
 package me.zeld.emperia.reign.util.type;
 
-public enum ResourceType {
+public enum ResourceType{
     WOOD,
-    STONE,
+    VEGETABLE,
     MEAT,
-    VEGETABLES,
-    IRON
+    STONE
 }

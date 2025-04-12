@@ -1,15 +1,17 @@
 package me.zeld.emperia.reign.network;
 
-import me.zeld.emperia.reign.service.Warehouse;
+import me.zeld.emperia.reign.service.Reign;
 
 import java.io.*;
 import java.net.*;
 
 public class CommandManager implements Runnable{
     private Socket client;
+    private final Reign reign;
 
-    public CommandManager(Socket client) {
+    public CommandManager(Socket client, Reign reign) {
         this.client = client;
+        this.reign = reign;
     }
 
     @Override
@@ -21,6 +23,13 @@ public class CommandManager implements Runnable{
             String command = in.readLine();
 
             //TODO: Handle commands
+            switch (command) {
+                case "SHOW_GOLD" -> out.println(reign.getGold());
+                case "SHOW_WAREHOUSE" -> out.println(reign.getWarehouse());
+            }
+
+            out.flush();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

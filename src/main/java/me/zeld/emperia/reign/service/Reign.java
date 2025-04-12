@@ -52,10 +52,6 @@ public class Reign implements Runnable {
         return warehouse;
     }
 
-    public Thread getWarehouseThread() {
-        return warehouseThread;
-    }
-
     public Terrain[] getMap() {
         return map;
     }

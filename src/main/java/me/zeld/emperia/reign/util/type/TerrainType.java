@@ -1,8 +1,7 @@
 package me.zeld.emperia.reign.util.type;
 
-public enum TerrainType {
+public enum TerrainType{
+    FOREST,
     FIELD,
-    MOUNTAIN,
-    FOREST
-
+    MOUNTAIN
 }

@@ -17,8 +17,9 @@ public class Building implements Runnable {
         this.type = type;
 
         this.resource = switch (type) {
+            case PIG_FARM -> ResourceType.MEAT;
             case QUARRY -> ResourceType.STONE;
-            case FARM -> ResourceType.VEGETABLES;
+            case FIELD_FARM -> ResourceType.VEGETABLE;
             case LUMBERJACK_HUT -> ResourceType.WOOD;
         };
 

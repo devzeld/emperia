@@ -1,7 +1,6 @@
 package me.zeld.emperia.reign.network;
 
 import me.zeld.emperia.reign.service.*;
-
 import java.io.*;
 import java.net.*;
 
@@ -25,11 +24,11 @@ public class PeerManager implements Runnable {
     @Override
     public void run() {
         try {
-            ServerSocket server = new ServerSocket(6830);
+            ServerSocket server = new ServerSocket(6831);
             while (active) {
                 Socket client = server.accept();
 
-                (new Thread(new CommandManager(client))).start();
+                (new Thread(new CommandManager(client, reign))).start();
             }
             server.close();
         } catch (IOException e) {

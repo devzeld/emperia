@@ -61,7 +61,6 @@ public class Terrain {
         }
     }
 
-
     /**
      * Destroy the building in terrain.
      */
@@ -74,7 +73,7 @@ public class Terrain {
 
     public static Terrain create(TerrainType type) {
         return switch (type) {
-            case FIELD -> new Terrain(type, new BuildingType[]{BuildingType.FARM});
+            case FIELD -> new Terrain(type, new BuildingType[]{BuildingType.FIELD_FARM});
             case MOUNTAIN -> new Terrain(type, new BuildingType[]{BuildingType.QUARRY});
             case FOREST -> new Terrain(type, new BuildingType[]{BuildingType.LUMBERJACK_HUT});
         };
