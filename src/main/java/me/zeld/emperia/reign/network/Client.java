@@ -9,6 +9,8 @@ import java.util.*;
 
 public class Client {
 
+    public static String IPSERVER = "192.168.4.35";
+
     public static void start(String[] args) {
         System.out.println(delete("Earthland"));
         System.out.println(create("Earthland"));
@@ -18,7 +20,7 @@ public class Client {
 
     public static Reign create(String name) {
         try {
-            Socket socket = new Socket("192.168.4.60", 6830);
+            Socket socket = new Socket(IPSERVER, 6830);
 
             PrintWriter out = new PrintWriter(socket.getOutputStream());
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -67,7 +69,7 @@ public class Client {
 
     public static void build(Reign reign, TerrainType tType, BuildingType bType) {
         try {
-            Socket socket = new Socket("192.168.4.60", 6830);
+            Socket socket = new Socket(IPSERVER, 6830);
 
             PrintWriter out = new PrintWriter(socket.getOutputStream());
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -98,7 +100,7 @@ public class Client {
 
     public static boolean delete(String name) {
         try {
-            Socket socket = new Socket("192.168.4.60", 6830);
+            Socket socket = new Socket(IPSERVER, 6830);
 
             PrintWriter out = new PrintWriter(socket.getOutputStream());
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -127,7 +129,7 @@ public class Client {
     public static Vector<String> getReigns() {
         Vector<String> reigns = new Vector<>();
         try {
-            Socket socket = new Socket("192.168.4.60", 6830);
+            Socket socket = new Socket(IPSERVER, 6830);
 
             PrintWriter out = new PrintWriter(socket.getOutputStream());
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
